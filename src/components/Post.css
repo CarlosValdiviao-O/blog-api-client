@@ -1,4 +1,4 @@
-.post {
+.post, .comment-box, .comments-wrapper {
     background-color: white;
     max-width: 80%;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.8);
@@ -47,4 +47,97 @@
 .post .preview img {
     max-height: 480px;
     max-width: 100%;
+}
+
+.errors li {
+    color: red;
+    margin-top: 8px;
+    list-style: none;
+}
+
+.comments-section h3 {
+    padding: 4px;
+}
+
+.comment-box input {
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: medium;
+    width: 100%;
+    padding: 2px 1px;
+    border-radius: 2px;
+    border: 1px solid grey;
+}
+
+.grow-wrap {
+    display: grid;
+    font-size: medium;
+    border: 0;
+    margin-bottom: 4px;
+    width: 100%; 
+}
+
+.grow-wrap::after {
+    content: attr(data-replicated-value) " ";
+    white-space: pre-wrap;
+    visibility: hidden;
+}
+
+.grow-wrap > textarea {
+    resize: none;
+    overflow: hidden;
+    font-size: medium;
+    border: 0; 
+    margin-bottom: 4px;
+    width: 100%;  
+    border-radius: 2px;
+}
+
+.grow-wrap > textarea,
+.grow-wrap::after {
+  /* Identical styling required!! */
+  border: 1px solid grey;
+  padding: 2px 1px ;
+  font: inherit;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.comment-box button {
+    margin-left: auto;
+    font-size: large;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+}
+
+.comment {
+    background-color: lightgrey;
+    border-radius: 2px;
+    box-shadow: 2px 2px solid grey;
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 4px 8px;
+}
+
+.comment h3 {
+    padding: 0;
+    margin: 0;
+    font-size: medium;
+}
+
+.comment p {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.comment .date {
+    text-align: end;
+    font-size: small;
+    color: rgb(0 0 0 0.6);
+    font-style: italic;
 }

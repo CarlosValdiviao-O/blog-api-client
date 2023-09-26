@@ -3,8 +3,7 @@ import "./Card.css";
 
 const Card = (props) => {
     const { post } = props;
-    const serverLink = require('./serverLink');
-
+    
     return (
         <div className='card'>
             <Link to={`/post/${post._id}`}>

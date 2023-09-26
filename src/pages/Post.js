@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import CommentBox from '../components/CommentBox';
+import Comments from '../components/Comments';
 import NavBar from '../components/NavBar';
 import "../components/Post.css";
 const serverLink = require('../components/serverLink');
@@ -11,6 +13,8 @@ const Post = () => {
     const [ sections, setSections ] = useState([]);
     const [ images, setImages ] = useState([]);
     const [ paragraphs, setParagraphs ] = useState([]);
+    const [ postStatus, setPostStatus ] = useState('');
+    const [ comments, setComments ] = useState([]);
     
     useEffect(() => {
         const aux = async () => {
@@ -64,10 +68,18 @@ const Post = () => {
                         </div>
                     )
                 })}
-                <div className='comment-box'>
-                    <p>Build a component for this</p>
-                </div>
             </div>
+            <div className='comments-section'>
+                <CommentBox id={id} setPostStatus={setPostStatus}
+                    setComments={setComments} comments={comments} />
+                <Comments id={id} setComments={setComments} comments={comments}/>
+            </div>
+            {postStatus !== '' ? 
+            <div className='message-container'>
+                <p className='message'>{postStatus}</p>
+            </div>
+            :
+            ''}
         </div>
     );
 }
