@@ -1,4 +1,5 @@
-//import "./Card.css";
+
+const serverLink = require('../components/serverLink');
 
 const Comment = (props) => {
     const { comment } = props;

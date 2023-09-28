@@ -9,10 +9,16 @@ body {
   position: relative;
 }
 
-body, html {
+body, html, #root {
   height: 100%;
   width: 100%;
   margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a {
@@ -65,4 +71,25 @@ h3 {
   padding: 8px;
   background-color: lightblue;
   width: fit-content;
+}
+
+footer {
+  background-color: black;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  color: white;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  text-decoration: wavy;
+  text-shadow: 1px 0px 1px rgba(255, 255, 255, 0.8);
 }

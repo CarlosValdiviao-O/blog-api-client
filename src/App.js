@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import './components/App.css';
 import Post from "./pages/Post";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
               <Route path="/post/:id" element={<Post />} />
             </Routes>
           </div>
-          {/*<Footer/>*/}
+          <Footer/>
     </BrowserRouter>
   );
 }
