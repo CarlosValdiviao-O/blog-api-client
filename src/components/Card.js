@@ -8,7 +8,7 @@ const Card = (props) => {
         <div className='card'>
             <Link to={`/post/${post._id}`}>
                 <h3>{post.title}</h3>
-                <p>{post.paragraphs[0].text.substring(0, 150)}</p>
+                <p>{post.preview}</p>
             </Link>               
         </div>
     )
